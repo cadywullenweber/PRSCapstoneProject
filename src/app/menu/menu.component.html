@@ -1,0 +1,11 @@
+<h1>My PRS System</h1>
+
+
+  <ul class="horizontalmenu">
+        <li *ngFor='let mi of menuitems'>
+            <span *ngIf="mi.visible" >
+            <a routerLink="{{mi.route}}" >{{mi.display}}</a>
+            </span> 
+        </li>
+    </ul>
+
