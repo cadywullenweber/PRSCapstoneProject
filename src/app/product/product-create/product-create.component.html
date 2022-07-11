@@ -1,0 +1,22 @@
+<app-menu></app-menu>
+
+<form [formGroup]="productForm"
+class="input-group vertical"
+(submit)="onSubmit()">
+
+Part Number: <input formControlName="partnbr" name="partnbr" id="partnbr" type="text">
+<br>
+Name: <input formControlName="name" name="name" id="name" type="name">
+<br>
+Price: <input formControlName="price" name="price" id="price" type="number">
+<br>
+Unit: <input formControlName="unit" name="unit" id="unit" type="text">
+<br>
+Photo Path: <input formControlName="photopath" name="photopath" id="photopath" type="text">
+<br>
+Vendor Id: <input formControlName="vendorid" name="vendorid" id="vendorid" type="number">
+<br>
+
+<button>Submit</button>
+
+</form>

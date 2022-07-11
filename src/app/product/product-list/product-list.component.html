@@ -1,0 +1,36 @@
+<app-menu></app-menu>
+
+<h3>Products</h3>
+<hr>
+{{products.length}} products found.
+
+<a routerLink='/product-create'>Add new product</a>
+<br>
+
+
+<table>
+    <tr>
+        <th>Id</th>
+        <th>PartNbr</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Unit</th>
+        <th>PhotoPath</th>
+        <th>VendorId</th>
+
+    </tr>
+    <tr *ngFor="let product of products">
+        <td>{{product.id}}</td>
+        <td>{{product.partnbr}}</td>
+        <td>{{product.name}}</td>
+        <td>{{product.price}}</td>
+        <td>{{product.unit}}</td>
+        <td>{{product.photopath}}</td>
+        <td>{{product.vendorid}}</td>
+
+
+        <td><a routerLink='/product-detail/{{product.id}}'>Display</a></td>
+        <td><a routerLink='/product-edit/{{product.id}}'>Edit</a></td>
+        
+    </tr>
+</table>

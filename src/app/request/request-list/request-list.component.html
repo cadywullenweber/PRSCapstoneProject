@@ -1,0 +1,37 @@
+<app-menu></app-menu>
+
+<h3>Requests</h3>
+<hr>
+{{requests.length}} requests found.
+
+<a routerLink='/request-create'>Add new request</a>
+<br>
+
+
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Description</th>
+        <th>Justification</th>
+        <th>RejectionReason</th>
+        <th>DeliveryMode</th>
+        <th>Status</th>
+        <th>Total</th>
+        <th>UserId</th>
+
+    </tr>
+    <tr *ngFor="let request of requests">
+        <td>{{request.id}}</td>
+        <td>{{request.description}}</td>
+        <td>{{request.justification}}</td>
+        <td>{{request.rejectionreason}}</td>
+        <td>{{request.deliverymode}}</td>
+        <td>{{request.status}}</td>
+        <td>{{request.total}}</td>
+        <td>{{request.userid}}</td>
+
+        <td><a routerLink='/request-display'>Display</a></td>
+        <td><a routerLink='/request-edit'>Edit</a></td>
+
+    </tr>
+</table>

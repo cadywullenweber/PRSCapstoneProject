@@ -1,0 +1,32 @@
+<h2>Details for {{product.name}}</h2>
+
+<table>
+    <tr>
+        <td>Id:</td>
+        <td>{{product.id}}</td>
+    </tr>
+    <tr>
+        <td>Part number:</td>
+        <td>{{product.partnbr}}</td>
+    </tr>
+    <tr>
+        <td>Name:</td>
+        <td>{{product.name}}</td>
+    </tr>
+    <tr>
+        <td>Price:</td>
+        <td class="rightalign">{{product.price | currency }}</td>
+    </tr>
+    <tr>
+        <td>Unit:</td>
+        <td>{{product.unit}}</td>
+    </tr>
+    <tr>
+        <td>Photo Path:</td>
+        <td>{{product.photopath}}</td>
+    </tr>
+    <tr>
+        <td>Vendor Id:</td>
+        <td>{{product.vendorid}}</td>
+    </tr>
+</table>

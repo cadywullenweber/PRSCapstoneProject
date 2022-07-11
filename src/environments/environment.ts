@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  PRSwebApiURL: 'http://localhost:7052'
+  PRSwebApiURL: 'http://localhost:5052'
 };
 
 /*
