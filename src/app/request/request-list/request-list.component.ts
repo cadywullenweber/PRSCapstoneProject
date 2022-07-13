@@ -10,22 +10,46 @@ import { User } from 'src/app/user/user.class';
   styleUrls: ['./request-list.component.css']
 })
 export class RequestListComponent implements OnInit {
-  requests : UserRequest[] = [];
-
+  requests: UserRequest[] = [];
+  users: User[] = [];
+  errorMessage = "";
 
   constructor(private requestService: RequestService,
     private userService: UserService) { }
 
   ngOnInit(): void {
+
     this.requestService.list().subscribe(
-      data => {
-        this.requests = data;
-        //this.getUsers();
+      {
+        next: (data) => {
+          this.requests = data;
+          this.getUsers();
+        },
+        error: (e: any) => this.errorMessage = e
       }
-    )
+    );
   }
-//getUsers()
+  getUsers() {
+    this.userService.list().subscribe(
+      {
+        next: (data) => {
+          this.users = data;
+          //alert(JSON.stringify(this.users))
+          this.mergeRequestsUsers();
+        },
+        error: (e: any) => this.errorMessage = e
+      }
+    );
+  }
 
-//mergeRequestsUsers()
-
+  mergeRequestsUsers() {
+    for (let req of this.requests) {
+      console.log(req.id)
+      var u = this.users.find(u => u.id == req.userId);
+      if (u) {
+        req.user = u;
+      }
+    }
+    //alert(JSON.stringify(this.requests))
+  }
 }

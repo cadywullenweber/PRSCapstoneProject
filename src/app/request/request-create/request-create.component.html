@@ -1,2 +1,19 @@
 <app-menu></app-menu>
-<p>request-create works!</p>
+
+<form [formGroup]="requestForm"
+
+(submit)="onSubmit()">
+
+
+<br>
+Description: <input formControlName="description" name="description" id="description" type="text">
+<br>
+Justification: <input formControlName="justification" name="justification" id="justification" type="text">
+<br>
+Delivery Mode: <input formControlName="deliverymode" name="deliverymode" id="deliverymode" type="text">
+<br>
+
+<button>Submit</button>
+
+</form>
+

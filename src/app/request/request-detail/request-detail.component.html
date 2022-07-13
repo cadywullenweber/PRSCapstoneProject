@@ -1,2 +1,50 @@
 <app-menu></app-menu>
-<p>request-detail works!</p>
+<h3>Request {{requestid}} </h3>
+<hr>
+ 
+<!-- <button>Approve</button>
+<br>
+<button>Reject</button> reject reason: <input type="text"/>
+<br> -->
+
+<table>
+    <tr>
+    <th>User</th> 
+    <th>Description</th>
+    <th>Justification</th>
+    <th>Delivery Mode</th>
+    <th>Total</th>
+    </tr>
+    <tr>
+    <td>{{request.id}}</td>
+    <td>{{request.user.firstname + " " +request.user.lastname }} </td>
+    <td>{{request.description}}</td>
+    <td>{{request.justification}}</td>
+    <td>{{request.rejectionReason}}</td>
+    <td>{{request.deliveryMode}}</td>
+    <td>{{request.status}}</td>
+    <td>{{request.total | currency}}</td>
+    <td>{{request.userId}}</td>
+    </tr>
+</table>
+
+<h3>Line Items</h3>
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Product Id</th>
+        <th>Quantity</th>
+        
+    </tr>
+    <tr *ngFor="let rl of requestlines">
+        <td>{{rl.id}}</td>
+        <td>{{rl.productId}}</td>
+        <td>{{rl.quantity}}</td>
+
+    </tr>
+
+
+
+</table>
+
+
